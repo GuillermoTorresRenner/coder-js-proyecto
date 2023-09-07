@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoja de Personaje de Fate Acelerado</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-3">
+      <!-- Logo inicial -->
+      <div class="text-center mb-3">
+        <img src="../assets/FateLogo.png" alt="logo Fate" width="50%" />
+      </div>
+
+      <form id="formPJ">
+        <!-- Bloque puntos iniciales -->
+        <div class="row justify-content-center">
+          <div class="col-12 mb-3">
+            <div class="row justify-content-center">
+              <div class="col-4">
+                <label for="puntos" class="form-label">Ptos Fate</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="puntos"
+                  min="0"
+                  value="3"
+                />
+              </div>
+              <div class="col-4">
+                <label for="recuperacion" class="form-label"
+                  >Recuperacion</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="recuperacion"
+                  min="0"
+                  max="3"
+                  value="3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque de identidad -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-8">
+            <div class="alert bg-black text-white">IDENTIDAD</div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label"
+                >Nombre del Personaje</label
+              >
+              <input type="text" class="form-control" id="nombre" required />
+            </div>
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <textarea
+                class="form-control"
+                id="descripcion"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque de aspectos -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-8">
+            <div class="alert bg-black text-white">ASPECTOS</div>
+
+            <label for="aspecto_principal" class="form-label"
+              >Aspecto Principal</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="aspecto_principal"
+              required
+            />
+
+            <label for="complicacion" class="form-label">Complicación</label>
+            <input
+              type="text"
+              class="form-control"
+              id="complicacion"
+              required
+            />
+
+            <label for="aspecto_3" class="form-label">Aspecto</label>
+            <input type="text" class="form-control" id="aspecto_3" />
+
+            <label for="aspecto_4" class="form-label">Aspecto</label>
+            <input type="text" class="form-control" id="aspecto_4" />
+
+            <label for="aspecto_5" class="form-label">Aspecto</label>
+            <input type="text" class="form-control" id="aspecto_5" />
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+          <div class="col-12 col-sm-8">
+            <div class="alert bg-black text-white">ESTILOS</div>
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="cauto"
+              max="3"
+              min="0"
+              placeholder="CAUTO"
+              required
+            />
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="furtivo"
+              max="3"
+              min="0"
+              placeholder="FURTIVO"
+              required
+            />
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="ingenioso"
+              max="3"
+              min="0"
+              placeholder="INGENIOSO"
+              required
+            />
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="llamativo"
+              max="3"
+              min="0"
+              placeholder="LLAMATIVO"
+              required
+            />
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="rapido"
+              max="3"
+              min="0"
+              placeholder="RÁPIDO "
+              required
+            />
+            <input
+              type="number"
+              class="form-control"
+              id="vigoroso"
+              max="3"
+              min="0"
+              placeholder="VIGOROSO"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Bloque de Proezas -->
+
+        <div class="row justify-content-center mt-3 px-2">
+          <div class="col-12 col-sm-8">
+            <div class="alert bg-black text-white">PROEZAS</div>
+            <input
+              type="text"
+              class="form-control mb-2"
+              id="proeza_1"
+              placeholder="Proeza 1"
+            />
+            <input
+              type="text"
+              class="form-control mb-2"
+              id="proeza_2"
+              placeholder="Proeza 2"
+            />
+            <input
+              type="text"
+              class="form-control mb-2"
+              id="proeza_3"
+              placeholder="Proeza 3"
+            />
+            <input
+              type="text"
+              class="form-control mb-2"
+              id="proeza_4"
+              placeholder="Proeza 4"
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="proeza_5"
+              placeholder="Proeza 5"
+            />
+          </div>
+        </div>
+
+        <!-- Bloque de Stress
+        <div class="row">
+          <div class="alert bg-black text-white mt-4">ESTRÉS</div>
+            <div class="row">
+              <div class="form-check form-switch col">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="estres_1"
+                />
+                <label class="form-check-label" for="estres_1"
+                  >1</label
+                >
+              </div>
+              <div class="form-check form-switch col">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="estres_2"
+                />
+                <label class="form-check-label" for="estres_2"
+                  >2</label
+                >
+              </div>
+              <div class="form-check form-switch col">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="estres_3"
+                />
+                <label class="form-check-label" for="estres_3"
+                  >3</label
+                >
+              </div>
+            </div> -->
+
+        <!-- Bloque de consecuencias      
+            <div class="row">
+
+            <div class="col-8">
+              <div class="alert bg-black text-white mt-4">CONSECUENCIAS</div>
+              <input
+                type="text"
+                class="form-control mb-2"
+                id="consecencia_2"
+                placeholder="Consecuencia 2"
+              />
+              <input
+                type="text"
+                class="form-control mb-2"
+                id="consecencia_4"
+                placeholder="Consecuencia 4"
+              />
+              <input
+                type="text"
+                class="form-control"
+                id="consecencia_6"
+                placeholder="Consecuencia 6"
+              />
+            </div>
+          </div> -->
+
+        <!-- quinto bloque -->
+        <div class="row justify-content-center my-5">
+          <button type="submit" class="btn btn-success col-2 mb-5">
+            <i class="fas fa-save"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Toast de confirmación -->
+    <div
+      class="position-fixed top-0 start-50 translate-middle-x bg-success"
+      style="z-index: 11"
+    >
+      <div
+        id="liveToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-success text-white">
+          <strong class="me-auto">Personaje Guardado Correctamente</strong>
+          <small></small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body" id="mensaje"></div>
+      </div>
+    </div>
+
+    <!-- Enlace a Bootstrap JS (requiere jQuery y Popper.js) -->
+    <script src="../js/crearPersonajes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
