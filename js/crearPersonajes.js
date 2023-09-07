@@ -7,7 +7,7 @@ listaPjs = listaPjs = JSON.parse(localStorage.getItem("listaPjs")) || [];
 const form = document.getElementById("formPJ");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  pj.id = parseInt(Math.random() * 10000).toString();
+  pj.id = Math.floor(Math.random() * 5).toString();
   pj.nombre = document.getElementById("nombre").value;
   pj.descripcion = document.getElementById("descripcion").value;
   pj.aspecto_principal = document.getElementById("aspecto_principal").value;

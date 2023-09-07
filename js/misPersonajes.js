@@ -11,9 +11,9 @@ listaPersonajes &&
     <h5 class="card-title text-center">${pj.nombre}</h5>
    
     <p class="card-text text-muted">${pj.descripcion}</p>
-    <div class="row justify-content-between">
-<a href='./pages/editarPJ.html?id=${pj.id}' id="editar" class="btn btn-warning col-1"><i class="fa fa-eye"></i></a>  
-    <a href="#" class= "btn btn-success col-1 "><i class="fa fa-play"></i></a>
+    <div class="row justify-content-center">
+<a href='./pages/editarPJ.html?id=${pj.id}' id="editar" class="btn btn-warning col-1 mx-2"><i class="fa fa-eye"></i></a>  
+    <a href="./pages/jugar.html?id=${pj.id}" class= "btn btn-success col-1 mx-2"><i class="fa fa-play"></i></a>
     </div>
     
   </div>
