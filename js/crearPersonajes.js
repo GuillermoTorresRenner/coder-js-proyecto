@@ -44,5 +44,5 @@ form.addEventListener("submit", (e) => {
   toast.show();
 
   //Agregado de delay
-  setTimeout(() => (window.location.href = "../index.html"), 2500); // 3000 milisegundos = 3 segundos
+  setTimeout(() => (window.location.href = "/index.html"), 2500); // 3000 milisegundos = 3 segundos
 });
