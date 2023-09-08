@@ -46,12 +46,6 @@ form.addEventListener("submit", (e) => {
   pj.proeza_3 = document.getElementById("proeza_3").value;
   pj.proeza_4 = document.getElementById("proeza_4").value;
   pj.proeza_5 = document.getElementById("proeza_5").value;
-  pj.estres_1 = false;
-  pj.estres_2 = false;
-  pj.estres_3 = false;
-  pj.consecuencia_2 = "";
-  pj.consecuencia_4 = "";
-  pj.consecuencia_6 = "";
 
   //Reemplazar pj actualizado y pj antiguo en array de pjs y guardarlo en local storage
 
