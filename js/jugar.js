@@ -130,8 +130,8 @@ let estres1 = document.getElementById("estres_1");
 let estres2 = document.getElementById("estres_2");
 let estres3 = document.getElementById("estres_3");
 estres1.checked ? (estres1.checked = true) : (estres1.checked = false);
-estres2.checked ? (estres1.checked = true) : (estres2.checked = false);
-estres3.checked ? (estres1.checked = true) : (estres3.checked = false);
+estres2.checked ? (estres2.checked = true) : (estres2.checked = false);
+estres3.checked ? (estres3.checked = true) : (estres3.checked = false);
 
 //tiradas
 
