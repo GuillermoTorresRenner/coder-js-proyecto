@@ -118,9 +118,6 @@ tarjeta.innerHTML = `<div class="card">
                 </ul>
             </div>`;
 
-//tiradas
-const resultado = document.getElementById("resultado");
-
 //Guardar ficha antes de salir de la página
 
 function guardarAntesDeSalir() {
@@ -149,3 +146,133 @@ let estres3 = document.getElementById("estres_3");
 estres1.checked ? (estres1.checked = true) : (estres1.checked = false);
 estres2.checked ? (estres1.checked = true) : (estres2.checked = false);
 estres3.checked ? (estres1.checked = true) : (estres3.checked = false);
+
+//tiradas
+
+btnTirarDados.addEventListener("click", () => {
+  const btnTirarDados = document.getElementById("btnTirarDados").value;
+  const dificultad = parseInt(document.getElementById("dificultad").value);
+  const modificador = parseInt(document.getElementById("modificador").value);
+  const estilo = document.getElementById("estilo").value;
+  const accion = document.getElementById("accion").value;
+  let estiloValor = 0;
+
+  switch (estilo) {
+    case "CAUTO":
+      estiloValor = pj.cauto;
+      break;
+    case "FURTIVO":
+      estiloValor = pj.furtivo;
+      break;
+    case "INGENIOSO":
+      estiloValor = pj.ingenioso;
+      break;
+    case "LLAMATIVO":
+      estiloValor = pj.llamativo;
+      break;
+    case "RAPIDO":
+      estiloValor = pj.rapido;
+      break;
+    case "VIGOROSO":
+      estiloValor = pj.vigoroso;
+      break;
+
+    default:
+      break;
+  }
+  let mensaje = `Tirada de ${accion} con estilo ${estilo} (${estiloValor}) y modificador (${modificador}) contra dificultad ${dificultad}  --> `;
+  let dado = 0;
+  let resultado = 0;
+  for (let index = 0; index < 4; index++) {
+    dado = Math.floor(Math.random() * 6) + 1;
+    if (dado === 1 || dado === 2) {
+      mensaje += "[-] ";
+      resultado--;
+    } else if (dado === 3 || dado === 4) {
+      mensaje += "[O] ";
+    } else {
+      mensaje += "[+] ";
+      resultado++;
+    }
+  }
+  resultado += modificador + estiloValor;
+  mensaje += "= " + resultado;
+  const texto = document.getElementById("resultado");
+  texto.innerText = mensaje;
+  // definición de resultado de tirada realizada
+  let resultadoFinal;
+  if (resultado - dificultad >= 3) {
+    resultadoFinal = "critico";
+  } else if (resultado > dificultad) {
+    resultadoFinal = "exito";
+  } else if (resultado === dificultad) {
+    resultadoFinal = "empate";
+  } else if (resultado < dificultad) {
+    resultadoFinal = "fallo";
+  }
+
+  let explicacion = "";
+
+  switch (resultadoFinal) {
+    case "critico":
+      if (accion === "SUPERAR") {
+        explicacion = "Consigues tu objetivo y generas un impulso";
+      } else if (accion === "ATAQUE") {
+        explicacion =
+          "El ataque acierta y causa daño. Puedes reducir el daño en 1 para generar un impulso.";
+      } else if (accion === "DEFENSA") {
+        explicacion =
+          "Tu oponente no consigue lo que quiere y tú recibes un impulso.";
+      } else if (accion === "VENTAJA") {
+        explicacion =
+          "Generas dos invocaciones gratuitas del aspecto creado | Creas o descubres el aspecto y consigues dos invocaciones gratuitas de este.";
+      }
+
+      break;
+    case "exito":
+      if (accion === "SUPERAR") {
+        explicacion = "Consigues tu objetivo ";
+      } else if (accion === "ATAQUE") {
+        explicacion = "El ataque acierta y causa daño ";
+      } else if (accion === "DEFENSA") {
+        explicacion = "Tu oponente no consigue lo que quiere ";
+      } else if (accion === "VENTAJA") {
+        explicacion =
+          "Generas una invocacion gratuita del aspecto creado | Creas o descubres el aspecto y consigues una invocación gratuita de este.";
+      }
+
+      break;
+    case "empate":
+      if (accion === "SUPERAR") {
+        explicacion = "Tienes éxito pagando un coste leve";
+      } else if (accion === "ATAQUE") {
+        explicacion = "El ataque no daña a tu objetivo, pero ganas un impulso.";
+      } else if (accion === "DEFENSA") {
+        explicacion = "Observa la acción de tu oponente para ver que sucede.";
+      } else if (accion === "VENTAJA") {
+        explicacion =
+          "Generas una invocación gratuita del aspecto. | Recibes un impulso si creas un aspecto nuevo, o se considera un éxito si buscabas uno ya existente.";
+      }
+
+      break;
+    case "fallo":
+      if (accion === "SUPERAR") {
+        explicacion = "Fallas o tienes éxito pagando un coste importante";
+      } else if (accion === "ATAQUE") {
+        explicacion = "Ningún efecto del ataque";
+      } else if (accion === "DEFENSA") {
+        explicacion = "Sufres las consecuencias del ataque de tu oponente.";
+      } else if (accion === "VENTAJA") {
+        explicacion =
+          "Ni creas ni descubres un aspecto, o bien lo consigues pero tu oponente(no tú) consigue una invocación gratuita. | Ningún beneficio adicional.";
+      }
+
+      break;
+
+    default:
+      break;
+  }
+
+  const desenlace = document.getElementById("desenlace");
+  desenlace.innerText = explicacion;
+});

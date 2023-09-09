@@ -55,7 +55,10 @@
       >
         <i class="fa fa-dice-d20"></i>
       </button>
-      <div class="text-center display-1"><strong id="resultado"></strong></div>
+      <div class="text-center bg-light text-warning mx-5 p-3">
+        <p id="resultado"></p>
+        <strong id="desenlace"></strong>
+      </div>
     </div>
 
     <!-- Modal -->
@@ -76,35 +79,52 @@
           </div>
           <div class="modal-body">
             <div class="mb-3">
+              <label for="dificultad" class="form-label">Dificultad</label>
               <input
                 type="number"
                 min="1"
                 max="9"
+                value="2"
                 id="dificultad"
                 class="form-control"
                 placeholder="dificultad"
                 required
               />
             </div>
+            <label class="form-select-label" for="estilo">Estilo</label>
             <select
-              class="form-select"
-              aria-label="Default select example"
+              class="form-select mb-3"
+              aria-label="estilo"
+              id="estilo"
+              required
+            >
+              <option selected value="CAUTO">CAUTO</option>
+              <option value="FURTIVO">FURTIVO</option>
+              <option value="INGENIOSO">INGENIOSO</option>
+              <option value="LLAMATIVO">LLAMATIVO</option>
+              <option value="RAPIDO">RÁPIDO</option>
+              <option value="VIGOROSO">VIGOROSO</option>
+            </select>
+            <label class="form-select-label" for="estilo">Acción</label>
+            <select
+              class="form-select mb-3"
+              aria-label="accion"
               id="accion"
               required
             >
-              <option selected>ACCIÓN</option>
-              <option value="superar">SUPERAR</option>
-              <option value="ataque">ATAQUE</option>
-              <option value="defensa">DEFENSA</option>
-              <option value="ventaja">VENTAJA</option>
+              <option selected value="SUPERAR">SUPERAR</option>
+              <option value="ATAQUE">ATAQUE</option>
+              <option value="DEFENSA">DEFENSA</option>
+              <option value="VENTAJA">VENTAJA</option>
             </select>
-          </div>
-          <div class="modal-body">
+
             <div class="mb-3">
+              <label for="modificador" class="form-label">Modificador</label>
               <input
                 type="number"
                 min="-9"
                 max="9"
+                value="0"
                 id="modificador"
                 class="form-control"
                 placeholder="modificador"
@@ -117,6 +137,7 @@
               type="button"
               class="btn btn-success"
               data-bs-dismiss="modal"
+              id="btnTirarDados"
             >
               <i class="fa fa-dice-d20"></i>
             </button>
