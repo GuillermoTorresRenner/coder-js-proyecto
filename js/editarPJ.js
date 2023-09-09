@@ -28,6 +28,7 @@ const form = document.getElementById("formPJ");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let pj = {};
+  pj.id = id.toString();
   pj.nombre = document.getElementById("nombre").value;
   pj.descripcion = document.getElementById("descripcion").value;
   pj.aspecto_principal = document.getElementById("aspecto_principal").value;
@@ -46,6 +47,8 @@ form.addEventListener("submit", (e) => {
   pj.proeza_3 = document.getElementById("proeza_3").value;
   pj.proeza_4 = document.getElementById("proeza_4").value;
   pj.proeza_5 = document.getElementById("proeza_5").value;
+  pj.puntosFate = 3;
+  pj.recuperacion = 3;
 
   //Reemplazar pj actualizado y pj antiguo en array de pjs y guardarlo en local storage
 
