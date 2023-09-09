@@ -25,10 +25,31 @@
     <div class="bg-dark text-white mt-2 mx-2">
       <div id="estilos"></div>
     </div>
+    <!-- Puntos fate -->
+    <div class="row justify-content-center mx-2">
+      <div class="mb-3 col">
+        <label for="puntos" class="form-label">Puntos Fate</label>
+        <input
+          type="number"
+          class="form-control"
+          id="puntos"
+          placeholder="Puntos Fate"
+        />
+      </div>
+      <div class="mb-3 col">
+        <label for="recuperacion" class="form-label">Recuperación</label>
+        <input
+          type="number"
+          class="form-control"
+          id="recuperacion"
+          placeholder="Recuperación"
+        />
+      </div>
+    </div>
     <!-- Tiradas -->
-    <div class="row">
+    <div class="row justify-content-center">
       <button
-        class="btn btn-success"
+        class="btn btn-success col-2 my-2"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
@@ -36,8 +57,6 @@
       </button>
       <div class="text-center display-1"><strong id="resultado"></strong></div>
     </div>
-    <!-- Modal Tirada de dado -->
-    <!-- Button trigger modal -->
 
     <!-- Modal -->
     <div
@@ -64,17 +83,33 @@
                 id="dificultad"
                 class="form-control"
                 placeholder="dificultad"
+                required
               />
             </div>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="accion"
+              required
+            >
+              <option selected>ACCIÓN</option>
+              <option value="superar">SUPERAR</option>
+              <option value="ataque">ATAQUE</option>
+              <option value="defensa">DEFENSA</option>
+              <option value="ventaja">VENTAJA</option>
+            </select>
+          </div>
+          <div class="modal-body">
             <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label"
-                >Ejemplo de textarea</label
-              >
-              <textarea
+              <input
+                type="number"
+                min="-9"
+                max="9"
+                id="modificador"
                 class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-              ></textarea>
+                placeholder="modificador"
+                required
+              />
             </div>
           </div>
           <div class="modal-footer">

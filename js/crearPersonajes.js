@@ -27,6 +27,15 @@ form.addEventListener("submit", (e) => {
   pj.proeza_4 = document.getElementById("proeza_4").value;
   pj.proeza_5 = document.getElementById("proeza_5").value;
 
+  pj.puntosFate = 3;
+  pj.recuperacion = 3;
+  pj.estres_1 = false;
+  pj.estres_2 = false;
+  pj.estres_3 = false;
+  pj.consecuencia_2 = "";
+  pj.consecuencia_4 = "";
+  pj.consecuencia_6 = "";
+
   listaPjs.push(pj);
   localStorage.setItem("listaPjs", JSON.stringify(listaPjs));
 
