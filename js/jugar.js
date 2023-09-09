@@ -99,21 +99,7 @@ tarjeta.innerHTML = `<div class="card">
                         <div class="ficha"> ${pj.proeza_5}</div> 
 
                     </li>
-                    <li class="list-group-item">
-                        <div class="text-muted small ">DESCRIPCIÓN:</div> 
-                        <div class="ficha"> ${pj.descripcion}</div> 
-
-                    </li>
-                    <li class="list-group-item">
-                        <div class="text-muted small ">DESCRIPCIÓN:</div> 
-                        <div class="ficha"> ${pj.descripcion}</div> 
-
-                    </li>
-                    <li class="list-group-item">
-                        <div class="text-muted small ">DESCRIPCIÓN:</div> 
-                        <div class="ficha"> ${pj.descripcion}</div> 
-
-                    </li>
+                   
 
                 </ul>
             </div>`;
