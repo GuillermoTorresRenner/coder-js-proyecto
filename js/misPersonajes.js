@@ -19,3 +19,31 @@ listaPersonajes &&
 </div>
 `;
   });
+
+//Carga de personajes de ejemplo desde json mediante fetch
+
+const personajesEjemploJson = async () => {
+  const resp = await fetch("../assets/personajesEjemplos.json");
+  const data = await resp.json();
+  const personajesEjemplo = document.getElementById("personajesEjemplos");
+
+  data.forEach((pje) => {
+    personajesEjemplo.innerHTML += `<div class="card mb-3 bg-secondary" >
+  <div class="card-body">
+  <i class="fa fa-lg fa-user "></i> 
+  <div>ID=${pje.id} </div>
+    <h5 class="card-title text-center">${pje.nombre}</h5>
+    <p class="card-text text-muted">${pje.descripcion}</p>
+    <div class="row justify-content-center">
+<a href='./pages/verPj.html?id=${pje.id}' id="editar" class="btn btn-dark col-2 mx-2"><i class="fa fa-eye"></i></a>  
+    </div>
+    
+  </div>
+</div>
+`;
+  });
+};
+
+personajesEjemploJson();
+
+// Llamamos a la función para obtener los datos
